@@ -16,14 +16,14 @@ test("Creates the name", () => {
 //value for ID
 test("Creates an ID", () => {
     const idValue = 10;
-    const employee = new Employee(idValue);
+    const employee = new Employee( "X", idValue);
     expect(employee.id).toBe(idValue);
 });
 
 //value for email
 test("Creates email", () => {
     const employeeEmail = "eployeeEmail";
-    const employee = new Employee(email);
+    const employee = new Employee("X", 1, employeeEmail);
     expect(employee.email).toBe(employeeEmail)
 });
 
@@ -37,20 +37,20 @@ test("getName() functions actually retrives name", () => {
 //test to get id via getId()
 test("getId() functions actually retrives ID", () => {
     const testId = 10;
-    const employee = new Employee(testId);
+    const employee = new Employee("X", testId);
     expect(employee.getId()).toBe(testId);
 });
 
 //test to get email via getEmail()
 test("getEmail() functions actually retrives Email", () => {
     const testEmail = "employeeEmail";
-    const employee = new Employee(testEmail);
+    const employee = new Employee("X", 1, testEmail);
     expect(employee.getEmail()).toBe(testEmail);
 });
 
 //test to return employee via getRole()
 test("getRole() functions actually retrives role", () => {
     const testRole = "employee";
-    const employee = new Employee(testRole);
+    const employee = new Employee("X", 1," testEmail");
     expect(employee.getRole()).toBe(testRole);
 });
