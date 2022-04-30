@@ -47,3 +47,10 @@ test("getEmail() functions actually retrives Email", () => {
     const employee = new Employee(testEmail);
     expect(employee.getEmail()).toBe(testEmail);
 });
+
+//test to return employee via getRole()
+test("getRole() functions actually retrives role", () => {
+    const testRole = "employee";
+    const employee = new Employee(testRole);
+    expect(employee.getRole()).toBe(testRole);
+});
