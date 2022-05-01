@@ -114,6 +114,7 @@ if (answers.employeeRole == "Engineer") {
 };
 //end of if statement
 
+//create a function to ask if user wants to add another  employee
 
 // then you'll have some options for like, add new employee here
 // and itll be like a list
