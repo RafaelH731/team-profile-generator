@@ -36,8 +36,11 @@ const questions = [
     },
 ]
 //Questions for the specific roles
-engineerQuestions = [
-    {
+//maybe add if statement if role selected to these parts to ask specific questions
+if (answers.employeeRole == "Engineer") {
+    const engineerQuestions = await inquirer
+    .prompt([
+        {
         type: "input",
         name: "employeeGithub",
         message: "Enter the engineer's GitHub username",
@@ -49,11 +52,20 @@ engineerQuestions = [
                 return false;
             }
         }
-    }
-]
+        }
+    ])
+    const engineer = new Engineer(
+        answers.name,
+        answers.id,
+        answers.email,
+        engineerQuestions.employeeGithub,
+    );
+    teamMemberData.push(engineer);
 
-internQuestions = [
-    {
+} else if (answers.role == "Intern"){
+    const internQuestions = await inquirer
+    .prompt([
+        {
         type: "input",
         name: "school",
         message: "Enter the intern's school",
@@ -65,11 +77,20 @@ internQuestions = [
                 return false;
             }
         }
-    }
-]
+        }
+    ])
+    const intern = new Intern(
+        answers.name,
+        answers.id,
+        answers.email,
+        internQuestions.school,
+    );
+    teamMemberData.push(internQuestions);
 
-ManagerQuestions = [
-    {
+} else if (answers.role == "Manager"){
+    const managerQuestions = await inquirer
+    .prompt([
+        {
         type: "input",
         name: "officeNumber",
         message: "Enter the manager's office number",
@@ -81,8 +102,19 @@ ManagerQuestions = [
                 return false;
             }
         }
-    }
-]
+        }
+    ])
+    const manager = new Manager(
+        answers.name,
+        answers.id,
+        answers.email,
+        managerQuestions.school,
+    );
+    teamMemberData.push(managerQuestions);
+};
+//end of if statement
+
+
 // then you'll have some options for like, add new employee here
 // and itll be like a list
 // and if they choose mengineer, pop up only the engineer questions 
