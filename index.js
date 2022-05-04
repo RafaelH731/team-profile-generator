@@ -8,6 +8,8 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
+const templateBuilder = require("./src/templateBuilder");
+
 //Array for answers
 var teamMemberData = [];
 
@@ -113,6 +115,48 @@ if (answers.employeeRole == "Engineer") {
     teamMemberData.push(managerQuestions);
 };
 //end of if statement
+
+async function addNewEmployeeQuestion(){
+    await questions()
+    
+    const addnewEmployee = await inquirer
+    .prompt ([
+        {
+            name: "addEmployee",
+            type: "list",
+            message: "Would you like to add another team member?",
+            choices: ["Yes, add new employee", "No, create team please"]
+        }
+    ])
+    if (addnewEmployee.addEmployee == "Yes, add new employee") {
+        return promptQuestions()
+    } return generateTeam();
+}
+
+promptQuestions();
+
+function writeToFile(fileName, data) {
+    
+    fs.writeFile(fileName, data ,function(error){
+        if(error) console.error(error);
+    })
+}
+
+function init() {
+
+    inquirer.prompt(questions).then(function(response){
+        response.name
+
+        writeToFile('./dist/index.html',templateBuilder(response))
+    })
+    
+
+}
+
+// Function call to initialize app 
+init();
+
+
 
 //create a function to ask if user wants to add another  employee
 
