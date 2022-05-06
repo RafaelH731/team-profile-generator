@@ -8,7 +8,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-const templateBuilder = require("./src/templateBuilder");
+//const templateBuilder = require("./src/templateBuilder");
 
 //Array for answers
 var teamMemberData = [];
@@ -40,8 +40,8 @@ const questions = [
 //Questions for the specific roles
 //maybe add if statement if role selected to these parts to ask specific questions
 if (answers.employeeRole == "Engineer") {
-    const engineerQuestions = await inquirer
-    .prompt([
+    
+    ([
         {
         type: "input",
         name: "employeeGithub",
@@ -65,8 +65,8 @@ if (answers.employeeRole == "Engineer") {
     teamMemberData.push(engineer);
 
 } else if (answers.role == "Intern"){
-    const internQuestions = await inquirer
-    .prompt([
+    
+    ([
         {
         type: "input",
         name: "school",
@@ -90,8 +90,8 @@ if (answers.employeeRole == "Engineer") {
     teamMemberData.push(internQuestions);
 
 } else if (answers.role == "Manager"){
-    const managerQuestions = await inquirer
-    .prompt([
+    
+    ([
         {
         type: "input",
         name: "officeNumber",
