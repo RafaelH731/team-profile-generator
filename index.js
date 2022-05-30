@@ -8,7 +8,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-//const templateBuilder = require("./src/templateBuilder");
+const templateBuilder = require("./src/templateBuilder");
 
 //Array for answers
 var teamMemberData = [];
