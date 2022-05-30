@@ -36,10 +36,10 @@ const questions = [
         name: "employeeRole",
         choices: ["Engineer", "Intern", "Manager"]
     },
-]
+];
 //Questions for the specific roles
 //maybe add if statement if role selected to these parts to ask specific questions
-if (answers.employeeRole == "Engineer") {
+if (questions.employeeRole == "Engineer") {
     
     ([
         {
@@ -64,7 +64,7 @@ if (answers.employeeRole == "Engineer") {
     );
     teamMemberData.push(engineer);
 
-} else if (answers.role == "Intern"){
+} else if (questions.role == "Intern"){
     
     ([
         {
@@ -89,7 +89,7 @@ if (answers.employeeRole == "Engineer") {
     );
     teamMemberData.push(internQuestions);
 
-} else if (answers.role == "Manager"){
+} else if (questions.role == "Manager"){
     
     ([
         {
@@ -110,7 +110,7 @@ if (answers.employeeRole == "Engineer") {
         answers.name,
         answers.id,
         answers.email,
-        managerQuestions.school,
+        managerQuestions.officeNumber,
     );
     teamMemberData.push(managerQuestions);
 };
@@ -123,7 +123,7 @@ async function addNewEmployeeQuestion(){
     .prompt ([
         {
             name: "addEmployee",
-            type: "list",
+            type: "confirm",
             message: "Would you like to add another team member?",
             choices: ["Yes, add new employee", "No, create team please"]
         }
@@ -133,7 +133,7 @@ async function addNewEmployeeQuestion(){
     } return generateTeam();
 }
 
-promptQuestions();
+//promptQuestions();
 
 function writeToFile(fileName, data) {
     
