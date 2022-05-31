@@ -10,7 +10,7 @@ test('Makes an employee object', () =>{
 test("Creates the name", () => {
     const employeeName = "Rafael";
     const employee = new Employee(employeeName);
-    expect(employee.employeeName).toBe(employeeName);
+    expect(employee.name).toBe(employeeName);
 });
 
 //value for ID
@@ -50,7 +50,7 @@ test("getEmail() functions actually retrives Email", () => {
 
 //test to return employee via getRole()
 test("getRole() functions actually retrives role", () => {
-    const testRole = "employee";
+    const testRole = "Employee";
     const employee = new Employee("X", 1," testEmail");
     expect(employee.getRole()).toBe(testRole);
 });
