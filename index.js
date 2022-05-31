@@ -100,8 +100,42 @@ function engineerRole(){
           });
 }
 
+function internRole(){
+    inquirer
+.prompt([
+    {
+        type: "input",
+          name: "name",
+          message: "What is the intern's name?",
+        },
+        {
+          type: "input",
+          name: "id",
+          message: "What is the intern's ID:",},
+          {
+         
+          type: "input",
+          name: "email",
+          message: "What is the intern's Email?",
+          },
+          {
+          type: "input",
+          name: "github",
+          message: "What is the intern's school?",
+    
+          }])
+          .then(function(answers){
+              let intern = new Intern(answers.name, answers.id, answers.email, answers.school)
+              teamMemberData.push(intern)
+              nextQuestion()
+          });
+}
 
-
+function finalTeam(){
+    fs.writeFileSync(
+        "./index.html", templateBuilder(teamMemberData), "utf-8"
+    );
+}
 
 
 
