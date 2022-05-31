@@ -15,31 +15,61 @@ const Employee = require("./lib/Employee")
 var teamMemberData = [];
 
 
-
+//manager prompt, always add manager first
 inquirer
 .prompt([
     {
         type: "input",
-          name: "Name",
+          name: "name",
           message: "What is the manager's name?",
         },
         {
           type: "input",
-          name: "ID",
+          name: "id",
           message: "What is the manager's ID:",},
           {
          
           type: "input",
-          name: "Email",
+          name: "email",
           message: "What is the manager's Email:",
           },
           {
           type: "input",
-          name: "Num",
+          name: "number",
           message: "What is the manager's office number:",
     
-          }
-])
+          }])
+          .then(function(answers){
+              let manager = new Manager(answers.name, answers.id, answers.email, answers.number)
+              teamMemberData.push(manager)
+              nextQuestion()
+          });
+
+
+//will ask next for managers team          
+function nextQuestion(){
+    inquirer
+    .prompt([
+      {
+    type:"list",
+    name:"employeeChoice",
+    message: "Please choose from options below",
+    choices: ["Engineer","Intern","CompleteTeam"],
+      }
+            ])
+              .then((answers) => {
+                if(answers.employeeChoice === "Engineer") {
+                  engineerRole();
+                } else if (answers.employeeChoice === "Intern") {
+                  internRole();
+                }
+                else{
+                  finalTeam();
+                }
+        });
+};
+
+
 
 
 
