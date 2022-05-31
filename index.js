@@ -31,7 +31,7 @@ inquirer
          
           type: "input",
           name: "email",
-          message: "What is the manager's Email:",
+          message: "What is the manager's Email?",
           },
           {
           type: "input",
@@ -69,7 +69,36 @@ function nextQuestion(){
         });
 };
 
-
+function engineerRole(){
+    inquirer
+.prompt([
+    {
+        type: "input",
+          name: "name",
+          message: "What is the engineer's name?",
+        },
+        {
+          type: "input",
+          name: "id",
+          message: "What is the engineer's ID:",},
+          {
+         
+          type: "input",
+          name: "email",
+          message: "What is the engineer's Email?",
+          },
+          {
+          type: "input",
+          name: "github",
+          message: "What is the engineer's GitHub username?",
+    
+          }])
+          .then(function(answers){
+              let engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
+              teamMemberData.push(engineer)
+              nextQuestion()
+          });
+}
 
 
 
