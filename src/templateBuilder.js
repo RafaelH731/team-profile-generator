@@ -6,9 +6,11 @@ const templateBuilder=(cards) => {
   <div class="card-body">
     <h5 class="card-title">${manager.name}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
-    <a href="#" class="card-link">ID: ${manager.id}</a>
+    <ul>
+    <li>ID: ${manager.id}</li>
+    <li>OFFICE NUMBER: ${manager.officeNumber}</li>
+    </ul>
     <a href="#" class="card-link">EMAIL: ${manager.email}</a>
-    <a href="#" class="card-link">OFFICE NUMBER: ${manager.officeNumber}</a>
   </div>
 </div>
         `
@@ -19,9 +21,11 @@ const templateBuilder=(cards) => {
   <div class="card-body">
     <h5 class="card-title">${engineer.name}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
-    <a href="#" class="card-link">ID: ${engineer.id}</a>
+    <ul>
+    <li>ID: ${engineer.id}</li>
     <a href="#" class="card-link">EMAIL: ${engineer.email}</a>
     <a href="#" class="card-link">GITHUB: ${engineer.github}</a>
+    </ul>
   </div>
 </div>
         `
@@ -32,9 +36,11 @@ const templateBuilder=(cards) => {
   <div class="card-body">
     <h5 class="card-title">${intern.name}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Intern</h6>
-    <a href="#" class="card-link">ID: ${intern.id}</a>
+    <ul>
+    <li>ID: ${intern.id}</li>
+    <li>SCHOOL: ${intern.school}</li>
+    </ul>
     <a href="#" class="card-link">EMAIL: ${intern.email}</a>
-    <a href="#" class="card-link">SCHOOL: ${intern.school}</a>
   </div>
 </div>
         `
