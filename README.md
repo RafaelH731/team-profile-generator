@@ -10,10 +10,16 @@
   ## Installation
   This application uses inquierer so it must be installed before it can be run.
   Jest must also be installed in order to test the files in the lib folder.
+  All depencies are in the code, run npm i to make sure all are installed before using the application.
 
 
   ## Screenshots
-  Screenshots will be added here when application working correctly.
+  - ![LandingPage](./images/team-screenshot.png)
+  - ![TerminalTest](./images/team-test.png)
+  - ![TerminalInquirer](./images/team-terminal-screenshot.png)
+
 
   ## Links
-  Link to youtube video will be added here
+  - Youtube Link: https://youtu.be/-kWioszI96s
+  - GitHub Repo Link: https://github.com/RafaelH731/team-profile-generator
+
